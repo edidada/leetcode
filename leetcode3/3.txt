@@ -1,0 +1,7 @@
+给定一个字符串，找出其没有重复字符的最大子序列的长度。
+ 例如，“abcabcbb”的无重复字符的最大子序列是“abc”，它的长度是3。
+ “bbbbb”的最大子序列是“b”，它的长度是1。
+
+Given a string, find the length of the longest substring without repeating characters. 
+For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3.
+For "bbbbb" the longest substring is "b", with the length of 1.
