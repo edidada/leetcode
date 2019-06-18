@@ -1,16 +1,18 @@
 https://blog.csdn.net/NoMasp/article/details/49305315
 
-¸ø¶¨Ò»¸öÁ´±í£¬ÒÆ³ý´ÓÎ²²¿ÆðµÄµÚn¸ö½áµã£¬²¢ÇÒ·µ»ØËüµÄÍ·½áµã¡£
+ç»™å®šä¸€ä¸ªé“¾è¡¨ï¼Œç§»é™¤ä»Žå°¾éƒ¨èµ·çš„ç¬¬nä¸ªç»“ç‚¹ï¼Œå¹¶ä¸”è¿”å›žå®ƒçš„å¤´ç»“ç‚¹ã€‚
 
-ÀýÈç£¬¸ø¶¨Á´±í£º1->2->3->4->5£¬n = 2¡£
+ä¾‹å¦‚ï¼Œç»™å®šé“¾è¡¨ï¼š1->2->3->4->5ï¼Œn = 2ã€‚
 
-ÔÚÒÆ³ýÎ²²¿ÆðµÚ¶þ¸ö½áµãºó£¬Á´±í½«±ä³É£º1->2->3->5¡£
+åœ¨ç§»é™¤å°¾éƒ¨èµ·ç¬¬äºŒä¸ªç»“ç‚¹åŽï¼Œé“¾è¡¨å°†å˜æˆï¼š1->2->3->5ã€‚
 
-±¸×¢£º
+å¤‡æ³¨ï¼š
 
-¸ø¶¨µÄnÊÇÓÐÐ§µÄ£¬´úÂë¾¡Á¿Ò»´ÎÍ¨¹ý¡£
+ç»™å®šçš„næ˜¯æœ‰æ•ˆçš„ï¼Œä»£ç å°½é‡ä¸€æ¬¡é€šè¿‡ã€‚
 
 
+
+```cpp
 Given a linked list, remove the nth node from the end of list and return its head.
 
 For example,
@@ -22,9 +24,6 @@ After removing the second node from the end, the linked list becomes 1->2->3->5.
 Note:
 Given n will always be valid.
 Try to do this in one pass.
-
-
-
 
 class Solution{
 public:
@@ -50,5 +49,22 @@ private:
         return true;
     }
 };
+```
 
+```java
+public ListNode removeNthFromEnd(ListNode head, int n) {
+    ListNode fast = head;
+    while (n-- > 0) {
+        fast = fast.next;
+    }
+    if (fast == null) return head.next;
+    ListNode slow = head;
+    while (fast.next != null) {
+        fast = fast.next;
+        slow = slow.next;
+    }
+    slow.next = slow.next.next;
+    return head;
+}
+```
 
